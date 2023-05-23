@@ -6,9 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-      <PackageReference Include="Grpc.Tools" Version="2.54.0">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
+        <Protobuf Include="..\..\proto\*.proto" ProtoRoot="..\..\proto" GrpcServices="Server" Access="internal" />
+        <PackageReference Include="Google.Protobuf" Version="3.23.1" />
+        <PackageReference Include="Grpc.AspNetCore.Server" Version="2.53.0" />
+        <PackageReference Include="Grpc.AspNetCore.Web" Version="2.53.0" />
+        <PackageReference Include="Grpc.Core.Api" Version="2.53.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.54.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 </Project>

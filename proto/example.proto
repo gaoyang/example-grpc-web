@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-service ExampleService {
+service ExampleGrpcService {
   rpc Login (LoginRequest) returns (LoginResponse);
   rpc Subscribe (google.protobuf.Empty) returns (stream SubscribeResponse);
 }
