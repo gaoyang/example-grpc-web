@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  grpc-web: ^1.4.2
+
+devDependencies:
+  grpc-web: 1.4.2
+
+packages:
+
+  /grpc-web/1.4.2:
+    resolution: {integrity: sha512-gUxWq42l5ldaRplcKb4Pw5O4XBONWZgz3vxIIXnfIeJj8Jc3wYiq2O4c9xzx/NGbbPEej4rhI62C9eTENwLGNw==}
+    dev: true
