@@ -12,6 +12,7 @@ PROTO_DIR=../../proto
 OUT_DIR=../src/grpc
 
 # Generate the .grpc.ts client code using the protoc command
+
 $PROTOC \
   --plugin="protoc-gen-js=./protoc-gen-js" \
   --plugin="protoc-gen-grpc-web=./protoc-gen-grpc-web" \
