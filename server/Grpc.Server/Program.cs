@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.ConfigureKestrel(options => { options.ListenLocalhost(6666); });
+builder.WebHost.ConfigureKestrel(options => { options.ListenLocalhost(2333); });
 
 builder.Services.AddGrpc();
 
