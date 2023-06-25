@@ -8,6 +8,10 @@
     "build": "npm run build:proto",
     "build:proto": "bash ./build/proto.sh"
   },
+  "dependencies": {
+    "example-proto": "file:example-proto-package",
+    "google-protobuf": "^3.21.2"
+  },
   "devDependencies": {
     "grpc-web": "^1.4.2",
     "typescript": "^5.1.3",

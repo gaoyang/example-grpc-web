@@ -9,9 +9,15 @@ builder.WebHost.ConfigureKestrel(options => { options.ListenLocalhost(2333); });
 
 builder.Services.AddGrpc();
 
+builder.Services.AddCors(o => o.AddDefaultPolicy(policy =>
+{
+    policy.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+}));
+
 var app = builder.Build();
-app.UseGrpcWeb();
-
+app.UseGrpcWeb(new() { DefaultEnabled = true });
+app.UseCors();
 app.MapGrpcService<ExampleService>();
-
 app.Run();
