@@ -9,7 +9,12 @@ PROTOC=./protoc
 PROTO_DIR=../../proto
 
 # Set the path to the directory where the .grpc.ts file is to be generated
-OUT_DIR=../src/grpc
+# Introduce the project by means of npm packages to avoid the problem that vite cannot handle commonjs
+OUT_DIR=../example-proto-package
+
+if [ ! -d "$OUT_DIR" ]; then
+  mkdir "$OUT_DIR"
+fi
 
 # Generate the .grpc.ts client code using the protoc command
 $PROTOC \
