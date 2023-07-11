@@ -1,5 +1,4 @@
-import { ExampleGrpcServiceClient } from 'example-proto/ExampleServiceClientPb'
-import { Empty } from 'google-protobuf/google/protobuf/empty_pb'
+import { ExampleGrpcServiceClientImpl, GrpcWebImpl } from './grpc/example.js'
 
 const btn = document.createElement('input')
 btn.type = 'button'
@@ -10,11 +9,12 @@ document.body.appendChild(result)
 
 const hostname = 'http://localhost:2333'
 console.log(`hostname: ${hostname}`)
-const client = new ExampleGrpcServiceClient(hostname)
+
+const rpc = new GrpcWebImpl(hostname, {})
+const client = new ExampleGrpcServiceClientImpl(rpc)
 
 btn.addEventListener('click', () => {
-  const call = client.subscribe(new Empty())
-  call.on('data', response => {
-    result.innerText += response.toObject().message + '\r\n'
+  client.Subscribe({}).subscribe(response => {
+    result.innerText += response.message + '\r\n'
   })
 })
