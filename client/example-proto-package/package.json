@@ -1,7 +1,0 @@
-{
-  "name": "example-proto",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "npm pack --pack-destination=./dist"
-  }
-}
